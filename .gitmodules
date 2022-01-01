@@ -1,0 +1,7 @@
+[submodule "src/assets/images/flags"]
+	path = src/assets/images/flags
+	url = https://github.com/Akinwunmi/flags
+
+[submodule "src/assets/region-configs"]
+	path = src/assets/region-configs
+	url = https://github.com/Akinwunmi/region-configs
