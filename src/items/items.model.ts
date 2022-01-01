@@ -1,9 +1,11 @@
 // Copyright 2022,
 // Jurrit van der Ploeg
 
-import { Schema } from 'mongoose';
+import { model, Model, Schema } from 'mongoose';
 
-const itemSchema = new Schema(
+import { ItemAttributes, ItemDocument, ItemModel } from './items.interface';
+
+const itemSchema = new Schema<ItemAttributes, Model<ItemAttributes>>(
   {
     id: { type: String },
     code: { type: String, required: true },
@@ -24,4 +26,4 @@ itemSchema.method('toJSON', function() {
   return object;
 });
 
-export default itemSchema;
+export default model<ItemDocument, ItemModel>('item', itemSchema);

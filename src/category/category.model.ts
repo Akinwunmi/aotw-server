@@ -21,9 +21,4 @@ categorySchema.method('toJSON', function() {
   return object;
 });
 
-const Category = model<CategoryDocument, CategoryModel>('category', categorySchema);
-categorySchema.statics.build = (attr: CategoryAttributes): CategoryDocument => {
-  return new Category(attr);
-};
-
 export default model<CategoryDocument, CategoryModel>('category', categorySchema);

@@ -4,7 +4,6 @@
 import { Document, Model } from 'mongoose';
 
 export interface ItemAttributes {
-  id: string;
   code: string;
   items: ItemAttributes[];
   itemType: string;
@@ -13,14 +12,7 @@ export interface ItemAttributes {
   visual: boolean;
 }
 
-export interface ItemDocument extends Document {
-  id: string;
-  code: string;
-  itemType: string;
-  items: ItemAttributes[];
-  name: string;
-  visual: boolean;
-}
+export interface ItemDocument extends ItemAttributes, Document {}
 
 export interface ItemModel extends Model<ItemDocument> {
   build(attr: ItemAttributes): ItemDocument;
