@@ -14,9 +14,9 @@ const router = express.Router();
  */
 router.get('/', (req: Request, res: Response): Promise<Response> => {
   return Category.find()
-    .then(category => {
+    .then(cat => {
       return res.status(200).json({
-        category
+        category: cat[0].category
       });
     })
     .catch(error => {
@@ -26,5 +26,36 @@ router.get('/', (req: Request, res: Response): Promise<Response> => {
       });
     });
 });
+
+/**
+ * @route PUT /api/category
+ * @desc Update category by known id
+ * @access PUBLIC
+ */
+router.put('/', (req: Request, res: Response): Promise<Response> | Response => {
+  if (!req.body.category) {
+    return res.status(400).json({
+      message: 'Request should contain category key.'
+    });
+  }
+  if (!req.body.category.length) {
+    return res.status(400).json({
+      message: 'Category string can not be empty.'
+    });
+  }
+  return Category.findByIdAndUpdate('61cc1b4634232b35871212a1', req.body, { new: true })
+    .then(() => {
+      return res.status(200).json({
+        message: `Category was set succesfully to ${req.body.category}.`
+      });
+    })
+    .catch(error => {
+      return res.status(500).json({
+        message: error.message,
+        error
+      });
+    });
+});
+
 
 export default router;
