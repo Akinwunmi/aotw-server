@@ -5,6 +5,7 @@ import { Document, Model } from 'mongoose';
 
 export interface CategoryAttributes {
   category: string;
+  categories: string[];
 }
 
 export interface CategoryDocument extends CategoryAttributes, Document {}

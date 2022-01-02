@@ -7,7 +7,8 @@ import { CategoryAttributes, CategoryDocument, CategoryModel } from './category.
 
 const categorySchema = new Schema<CategoryAttributes, Model<CategoryAttributes>>(
   {
-    category: { type: String, required: true }
+    category: { type: String, required: true },
+    categories: { type: Array, required: true }
   },
   {
     collection: 'category',
