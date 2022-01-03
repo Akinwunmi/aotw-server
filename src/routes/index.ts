@@ -8,8 +8,7 @@ import items from '../items';
 
 const router = Router();
 
-// ! FIX change folder based on selected category
-router.use('/api/visuals', express.static('src/assets/images/regions'));
+router.use('/api/visuals', express.static('src/assets/images'));
 router.use('/api/category', category);
 router.use('/api/items', items);
 
