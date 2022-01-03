@@ -15,9 +15,10 @@ const router = express.Router();
 router.get('/', (req: Request, res: Response): Promise<Response> => {
   return Category.find()
     .then(cat => {
+      const { category, categories } = cat[0];
       return res.status(200).json({
-        category: cat[0].category,
-        categories: cat[0].categories
+        category,
+        categories
       });
     })
     .catch(error => {
