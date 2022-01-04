@@ -1,0 +1,62 @@
+@import './variables/index.scss';
+
+html,
+body {
+  background-color: $secondary-smoke;
+
+  @include typography-default();
+  color: $primary-blue;
+}
+
+h1, h2, h3 {
+  @include typography-header();
+}
+a {
+  cursor: pointer;
+
+  color: $primary-blue;
+  @include typography-link();
+}
+
+.header {
+  z-index: 200;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: aotw-grid(2);
+  width: 100%;
+  padding: aotw-grid(1) aotw-grid(2);
+
+  background-color: $secondary-smoke;
+  box-shadow: 0 0 aotw-grid(2) aotw-grid(2) $secondary-smoke;
+
+  &_title {
+    display: flex;
+    align-items: center;
+    gap: aotw-grid(2);
+
+    img {
+      height: aotw-grid(4);
+    
+      cursor: pointer;
+    }
+  }
+}
+.btn-menu {
+  width: aotw-grid(8);
+  height: aotw-grid(8);
+  padding: 0 aotw-grid(1);
+}
+
+.main {
+  min-height: calc(100vh - 80px);
+  padding-top: aotw-grid(15);
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: aotw-grid(2);
+    padding-inline: aotw-grid(2);
+  }
+}

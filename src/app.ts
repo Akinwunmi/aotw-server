@@ -14,7 +14,7 @@ const startServer = (): void => {
   const app = createServer();
 
   app.listen(PORT, () => {
-    console.log(`${NAMESPACE} is running in ${NODE_ENV} mode on port ${PORT}.`);
+    console.log(`${NAMESPACE} is running in ${NODE_ENV}mode on port ${PORT}.`);
   });
 };
 

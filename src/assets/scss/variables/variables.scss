@@ -1,0 +1,25 @@
+@function aotw-grid($space) {
+  $result: 5px;
+
+  @return $result * $space;
+}
+
+$aotw-media-breakpoints: (
+  'mobile': 480px,
+  'tablet': 768px,
+  'tablet-wide': 1024px,
+  'desktop': 1440px
+);
+
+@mixin aotw-media($breakpoint, $type: min) {
+  @if map-has-key($aotw-media-breakpoints, $breakpoint) {
+    $width: map-get($aotw-media-breakpoints, $breakpoint);
+
+    @if $type == max {
+      $width: $width - 1px;
+    }
+    @media only screen and (#{$type}-width: $width) {
+      @content;
+    }
+  }
+}

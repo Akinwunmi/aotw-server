@@ -1,9 +1,10 @@
 // Copyright 2022,
 // Jurrit van der Ploeg
 
+import cors from 'cors';
 import express, { Application, Request, Response, Router } from 'express';
 import mongoose from 'mongoose';
-import cors from 'cors';
+import sass from 'node-sass-middleware';
 
 import config from './config/config';
 import logger from './middleware/logger';
@@ -30,9 +31,19 @@ export default function createServer(): Application {
   
   // default route
   app.get('/', (req: Request, res: Response) => {
-    res.send('Welcome to the server of Archive of the World.');
+    res.sendFile(__dirname + '/assets/pages/index.html');
   });
-
+  
+  app.use(
+    sass({
+      src: __dirname + '/assets/scss',
+      dest: __dirname + '/assets/css',
+      debug: true,
+      outputStyle: 'compressed'
+    }),
+    express.static(__dirname + '/assets')
+  );
+  
   return app;
 }
 
