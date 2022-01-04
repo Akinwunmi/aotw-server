@@ -1,10 +1,10 @@
-[submodule "src/assets/images/football"]
-	path = src/assets/images/football
-	url = https://github.com/Akinwunmi/football
+[submodule "src/assets/images/aotw-football"]
+	path = src/assets/images/aotw-football
+	url = https://github.com/Akinwunmi/aotw-football
 
-[submodule "src/assets/images/regions"]
-	path = src/assets/images/regions
-	url = https://github.com/Akinwunmi/regions
+[submodule "src/assets/images/aotw-regions"]
+	path = src/assets/images/aotw-regions
+	url = https://github.com/Akinwunmi/aotw-regions
 
 [submodule "src/assets/region-configs"]
 	path = src/assets/region-configs
