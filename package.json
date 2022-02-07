@@ -28,6 +28,10 @@
     "url": "https://github.com/Akinwunmi/aotw-server/issues"
   },
   "homepage": "https://github.com/Akinwunmi/aotw-server#readme",
+  "engines": {
+    "npm": ">=8.3.2",
+    "node": ">=14.15.4"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
